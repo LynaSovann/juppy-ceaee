@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: juppy-ceaee-deployment
+  labels:
+    app: juppy-ceaee
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: juppy-ceaee
+  template:
+    metadata:
+      labels:
+        app: juppy-ceaee
+    spec:
+      containers:
+        - name: juppy-ceaee-container
+          image: pipejet/juppy-ceaee:latest
+          ports:
+            - containerPort: 8080
