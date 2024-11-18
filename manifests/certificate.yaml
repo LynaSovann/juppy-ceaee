@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: juppy-ceaee-certificate
+  namespace: juppy-ceaee
+spec:
+  secretName: juppy-ceaee-secret-tls
+  commonName: thanak81-juppy.assessify.org
+  dnsNames:
+  - thanak81-juppy.assessify.org
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
